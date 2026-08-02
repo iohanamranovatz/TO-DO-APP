@@ -41,9 +41,22 @@ export default function Home() {
     }
 
   }
+
   async function completeTask(id : number){
     await supabase.from("tasks").update({completed : true}).eq("id",id);
     fetchTasks(); // an record is updated, the updated list needs to be rendered
+  }
+
+  async function deleteTask( id: number)
+  {
+    await supabase.from("tasks").delete().eq("id", id);
+    fetchTasks();
+  }
+
+  async function updateTask(id : number , newTitle : any)
+  {
+    await supabase.from("tasks").update({title : newTitle}).eq("id",id);
+    fetchTasks();
   }
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -58,14 +71,20 @@ export default function Home() {
             <div key={task.id}>
               <span>{task.title}</span>
               <button onClick={ () => completeTask(task.id)}>Complete</button>
-              <button>Update</button>
-              <button>Delete</button>
+              <button onClick = { () => updateTask(task.id , prompt("Add a new title!:", task.title))}>Update</button>
+              <button onClick = { () => deleteTask(task.id)}>Delete</button>
             </div>
           ))}
         </div>
         <h2>Tasks from the Past</h2>
-        <div>
-
+         <div>
+          {tasks.filter((t) => t.completed).map((task) => (
+            <div key={task.id}>
+              <span>{task.title}</span>
+              <button onClick={ () => completeTask(task.id)}>Complete</button>
+              <button onClick = { () => deleteTask(task.id)}>Delete</button>
+            </div>
+          ))}
         </div>
       </main>
     </div>
