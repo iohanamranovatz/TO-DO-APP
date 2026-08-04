@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TO-DO App
 
-## Getting Started
+Simple task manager for creating, tracking, and organizing daily tasks.
 
-First, run the development server:
+## Features
+
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- View all current tasks in one list
+- Keep task management simple and fast
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) (recommended: latest LTS)
+- One package manager: `npm`, `yarn`, or `pnpm`
+
+## Installation
+
+### 1) Clone the repository
+
+```bash
+git clone <repository-url>
+cd to-do-app
+```
+
+### 2) Install dependencies
+
+Using npm:
+
+```bash
+npm install
+```
+
+Using Yarn:
+
+```bash
+yarn install
+```
+
+Using pnpm:
+
+```bash
+pnpm install
+```
+
+## Run the Application
+
+Using npm:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If `dev` is not available, check available scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then run the matching start command from `package.json`.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Start the app locally.
+2. Open the shown local URL in your browser.
+3. Type a task name.
+4. Add the task to the list.
+5. Mark tasks complete when finished.
+6. Remove tasks you no longer need.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Troubleshooting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Command not found (`npm`, `yarn`, `pnpm`)**: Install Node.js and retry.
+- **Port already in use**: Stop the other process or run on another port.
+- **Missing script errors**: Verify scripts inside `package.json`.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `README.md` — Documentation and setup instructions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+No license is currently specified.
