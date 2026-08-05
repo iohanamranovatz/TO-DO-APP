@@ -68,7 +68,7 @@ export default function Home() {
         <h2>Your Tasks ! </h2>
         <div>
           {tasks.filter((t) => !t.completed).map((task) => (
-            <div key={task.id}>
+            <div key={task.id} className="flex items-center gap-3 mb-3">
               <span>{task.title}</span>
               <button onClick={ () => completeTask(task.id)}>Complete</button>
               <button onClick = { () => updateTask(task.id , prompt("Add a new title!:", task.title))}>Update</button>
@@ -79,9 +79,8 @@ export default function Home() {
         <h2>Tasks from the Past</h2>
          <div>
           {tasks.filter((t) => t.completed).map((task) => (
-            <div key={task.id}>
+            <div key={task.id} className="flex items-center gap-3 mb-3">
               <span>{task.title}</span>
-              <button onClick={ () => completeTask(task.id)}>Complete</button>
               <button onClick = { () => deleteTask(task.id)}>Delete</button>
             </div>
           ))}
